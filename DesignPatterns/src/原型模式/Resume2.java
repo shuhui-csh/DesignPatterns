@@ -13,6 +13,20 @@ public class Resume2 implements Cloneable {
 	private WorkExperience work;
 
 	/**
+	 * @return
+	 */
+	public WorkExperience getWork() {
+		return work;
+	}
+
+	/**
+	 * @param work
+	 */
+	public void setWork(WorkExperience work) {
+		this.work = work;
+	}
+
+	/**
 	 * @param name
 	 */
 	public Resume2(String name) {
@@ -64,12 +78,20 @@ public class Resume2 implements Cloneable {
 	 * @see java.lang.Object#clone()
 	 */
 	@Override
-	protected Object clone() throws CloneNotSupportedException {
+	protected Object clone() {
 		// 深复制
-		Resume2 res = new Resume2(this.work);
-		res.name = this.name;
-		res.sex = this.sex;
-		res.age = this.age;
+		// Resume2 res = new Resume2(this.work);
+		// res.name = this.name;
+		// res.sex = this.s;
+		// res.age = this.age;
+		Resume2 res = null;
+		try {
+			res = (Resume2) super.clone();
+			res.work = (WorkExperience) this.getWork().clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return res;
 	}
 

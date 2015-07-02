@@ -46,9 +46,16 @@ public class WorkExperience implements Cloneable {
 	 * @see java.lang.Object#clone()
 	 */
 	@Override
-	protected Object clone() throws CloneNotSupportedException {
+	protected Object clone()  {
 		// TODO Auto-generated method stub
-		return super.clone();
+		WorkExperience workExperence = null;
+		try {
+			workExperence=(WorkExperience) super.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return workExperence;
 	}
 
 }
