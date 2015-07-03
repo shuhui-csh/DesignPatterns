@@ -22,11 +22,11 @@ public class StaticInnerSingleton {
 	 * @author CSH 2015-7-3下午10:35:31 静态内部类，当需要的时候才会加载，并且只是加载一次
 	 */
 	private static class StaticInnerClass {
-		private static final StaticInnerSingleton instance = new StaticInnerSingleton();
+		private static final StaticInnerSingleton INSTANCE = new StaticInnerSingleton();
 	}
 
 	public static StaticInnerSingleton getInstance() {
-		return StaticInnerClass.instance;
+		return StaticInnerClass.INSTANCE;
 
 	}
 
